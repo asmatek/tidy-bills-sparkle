@@ -1,96 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 47% 6%;
+    --foreground: 220 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 40% 8%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 40% 8%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 192 100% 50%;
+    --primary-foreground: 222 47% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 22 100% 55%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 192 100% 50%;
+    --accent-foreground: 222 47% 6%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 14%;
+    --input: 220 20% 14%;
+    --ring: 192 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 220 20% 95%;
+    --sidebar-primary: 192 100% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 220 20% 14%;
+    --sidebar-ring: 192 100% 50%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Custom Nova tokens */
+    --navy: 222 47% 6%;
+    --deep: 222 40% 8%;
+    --electric: 192 100% 50%;
+    --gold: 22 100% 55%;
+    --warm: 22 100% 60%;
+    --glass: 0 0% 100%;
+    --glass-border: 0 0% 100%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Gradients */
+    --gradient-electric: linear-gradient(135deg, hsl(192 100% 50%), hsl(192 100% 40%));
+    --gradient-gold: linear-gradient(135deg, hsl(22 100% 55%), hsl(22 100% 60%));
+    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(192 100% 50% / 0.12) 0%, transparent 70%),
+                     radial-gradient(ellipse 60% 40% at 80% 80%, hsl(22 100% 55% / 0.08) 0%, transparent 60%);
+    --gradient-glow-electric: 0 0 40px hsl(192 100% 50% / 0.15);
+    --gradient-glow-gold: 0 0 40px hsl(22 100% 55% / 0.15);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Fonts */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
   }
 }
 
@@ -101,5 +75,79 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-electric {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--electric)), hsl(192 100% 70%));
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--warm)));
+  }
+
+  .glass-card {
+    background: hsl(var(--glass) / 0.04);
+    border: 1px solid hsl(var(--glass-border) / 0.08);
+    backdrop-filter: blur(16px);
+  }
+
+  .glass-card-electric {
+    background: hsl(var(--glass) / 0.04);
+    border: 1px solid hsl(var(--electric) / 0.15);
+    backdrop-filter: blur(16px);
+  }
+
+  .glass-card-gold {
+    background: hsl(var(--glass) / 0.04);
+    border: 1px solid hsl(var(--gold) / 0.15);
+    backdrop-filter: blur(16px);
+  }
+
+  .hero-grid-bg {
+    background-image: linear-gradient(hsl(var(--electric) / 0.04) 1px, transparent 1px),
+                       linear-gradient(90deg, hsl(var(--electric) / 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .glow-electric {
+    box-shadow: var(--gradient-glow-electric);
+  }
+
+  .glow-gold {
+    box-shadow: var(--gradient-glow-gold);
+  }
+
+  .section-padding {
+    @apply px-[5vw] py-16 md:py-24;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Grid animation */
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+.animate-grid-drift {
+  animation: gridDrift 20s linear infinite;
 }

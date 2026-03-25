@@ -34,7 +34,7 @@ const billSteps = [
 const faqItems = [
   { question: "Will switching providers affect my service or cause an outage?", answer: "No. Texas has a deregulated energy market. The physical delivery of power is always handled by your local TDU (like Oncor or CenterPoint). Switching providers only changes who bills you — there is zero interruption." },
   { question: "How does Nova Energy make money if it's free for me?", answer: "Electricity providers pay us a referral fee when you sign up through us — similar to how insurance brokers work. This fee is built into every plan regardless of how you sign up, so using us doesn't cost you anything extra." },
-  { question: "What if I'm locked into a contract?", answer: "We check your contract end date and set a reminder to find you a better plan when you're eligible. We can also lock in your renewal rate before your current contract expires." },
+  { question: "What if I'm locked into a contract?", answer: "We check your contract end date and set a reminder to shop your renewal well in advance. In many cases, we can lock in your next rate months before your current contract expires — protecting you from market spikes and ensuring a seamless transition with no gap in coverage." },
 ];
 
 const CommercialPage = () => {

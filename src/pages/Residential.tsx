@@ -20,6 +20,19 @@ const steps = [
   { num: "03", title: "You Save Money", desc: "We handle the switch — no interruption, no hassle. Just a lower bill next month." },
 ];
 
+const resBillLines = [
+  { label: "Energy Charge (1,200 kWh × 8.5¢)", value: "$102.00", tip: "The rate you pay per kWh — this is what Nova negotiates down." },
+  { label: "TDU Delivery Charge", value: "$42.50", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power." },
+  { label: "TDU Metering Charge", value: "$3.42", tip: "Monthly charge for maintaining your electric meter." },
+  { label: "Taxes & Fees", value: "$8.12", tip: "State and local taxes applied to your electricity usage." },
+];
+
+const resBillSteps = [
+  { title: "Energy Charge", desc: "This is the largest part of your bill — and the only line Nova can change. We negotiate this rate directly with providers." },
+  { title: "TDU (Delivery) Charges", desc: "Set by your local utility (Oncor, CenterPoint, etc.) and the same regardless of provider. We can't change these, but we verify they're correct." },
+  { title: "The Nova Difference", desc: "Most homeowners overpay 15–30% on the energy charge without realizing it. We find you the lowest available rate — free." },
+];
+
 const faqItems = [
   { question: "Does my rate change if I use more electricity?", answer: "No. With a Nova residential fixed-rate plan, your rate per kWh is locked in regardless of how much you use. High AC month? Same rate. Low-usage month? Same rate." },
   { question: "Is there any cost to use Nova Energy?", answer: "Zero. Nova Energy is 100% free to customers. We're compensated by the electricity supplier when we place your account — you never pay us a cent." },

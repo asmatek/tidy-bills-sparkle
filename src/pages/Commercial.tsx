@@ -160,7 +160,7 @@ const CommercialPage = () => {
             <GlassCard hover={false}>
               <div className="bg-electric/10 rounded-xl px-4 py-3 mb-5 flex justify-between items-center">
                 <span className="font-heading font-bold text-foreground">Sample Commercial Bill</span>
-                <span className="font-heading font-bold text-xl text-gold">$156.04</span>
+                <span className="font-heading font-bold text-xl text-gold">$1,788.70</span>
               </div>
               {billLines.map((line, i) => (
                 <div key={i} className="flex justify-between items-center py-3 border-b border-border last:border-b-0 text-sm group relative">

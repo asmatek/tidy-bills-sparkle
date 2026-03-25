@@ -176,8 +176,8 @@ const CommercialPage = () => {
               <div className="bg-gold/5 border border-gold/20 rounded-xl px-4 py-3 mt-5 flex items-center gap-3">
                 <span className="text-2xl">💡</span>
                 <p className="text-xs text-muted-foreground">
-                  Most businesses overpay <strong className="text-gold">15–30%</strong> on the energy charge alone.
-                </p>
+                   At this usage level, a <strong className="text-gold">15–30% reduction</strong> on the energy charge saves <strong className="text-gold">$160–$325/month</strong>.
+                 </p>
               </div>
             </GlassCard>
 

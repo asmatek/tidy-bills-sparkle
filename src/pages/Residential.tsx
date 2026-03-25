@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, ArrowRight, Lock, DollarSign, FileText, Zap } from "lucide-react";
+import { Home, ArrowRight, Lock, DollarSign, FileText, Zap, HelpCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";

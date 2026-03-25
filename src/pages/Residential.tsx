@@ -247,7 +247,7 @@ const ResidentialPage = () => {
                 </div>
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Phone</label>
-                  <input type="tel" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                  <input type="tel" name="phone" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
                 </div>
               </div>
               <div>

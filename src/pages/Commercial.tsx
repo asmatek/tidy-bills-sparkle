@@ -25,9 +25,10 @@ const billLines = [
 ];
 
 const billSteps = [
-  { title: "Energy Charge", desc: "This is the only line item Nova can change — and it's usually the largest. We negotiate this rate directly." },
-  { title: "TDU (Delivery) Charges", desc: "Set by your local utility and the same regardless of provider. Nova can't change these, but we make sure they're correct." },
-  { title: "The Nova Difference", desc: "Most businesses overpay 15–30% on their energy charge alone. We find the gap and close it." },
+  { title: "Energy Charge", desc: "This is the biggest line on your bill — and the one Nova negotiates. At 15,000+ kWh/month, even a half-cent reduction saves $75/month." },
+  { title: "Demand Charge", desc: "Unique to commercial accounts, this is based on your peak load. The right plan structure can significantly reduce this cost." },
+  { title: "TDU (Delivery) Charges", desc: "Set by your local utility and the same regardless of provider. Nova can't change these, but we audit them for errors." },
+  { title: "The Nova Difference", desc: "Commercial accounts using 10,000–100,000+ kWh/month routinely overpay 15–30%. We've saved businesses thousands per year." },
 ];
 
 const faqItems = [

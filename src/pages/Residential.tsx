@@ -234,33 +234,33 @@ const ResidentialPage = () => {
           />
           <div className="glass-card-gold rounded-2xl p-6 md:p-8 mt-10">
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Thank you! We'll be in touch within one business day.");
+              action="https://formspree.io/f/meeroqyy"
+              method="POST"
+              onSubmit={() => {
               }}
               className="space-y-4"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Full Name</label>
-                  <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                  <input type="text" name="name" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Phone</label>
-                  <input type="tel" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                  <input type="tel" name="phone" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
                 </div>
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Email</label>
-                <input type="email" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                <input type="email" name="email" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Service Address (City, TX)</label>
-                <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                <input type="text" name="address" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Average Monthly Usage (kWh)</label>
-                <input type="text" placeholder="e.g. 1,200" className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors placeholder:text-muted-foreground/50" />
+                <input type="text" name="usage" placeholder="e.g. 1,200" className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors placeholder:text-muted-foreground/50" />
               </div>
               <div className="bg-gold/5 border border-gold/20 rounded-xl px-4 py-3 flex items-start gap-3">
                 <span className="text-gold text-lg">📄</span>

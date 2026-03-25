@@ -17,10 +17,11 @@ const whyItems = [
 ];
 
 const billLines = [
-  { label: "Energy Charge (1,200 kWh × 8.5¢)", value: "$102.00", tip: "The rate you pay per kWh — this is what Nova negotiates down." },
-  { label: "TDU Delivery Charge", value: "$42.50", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power." },
-  { label: "TDU Metering Charge", value: "$3.42", tip: "Monthly charge for maintaining your electric meter." },
-  { label: "Taxes & Fees", value: "$8.12", tip: "State and local taxes applied to your electricity usage." },
+  { label: "Energy Charge (15,000 kWh × 7.2¢)", value: "$1,080.00", tip: "The rate you pay per kWh — this is what Nova negotiates down. At commercial volumes, even a fraction of a cent saves hundreds." },
+  { label: "Demand Charge (85 kW × $4.50)", value: "$382.50", tip: "Based on your peak electricity demand during the billing period. Common for commercial accounts." },
+  { label: "TDU Delivery Charge", value: "$245.00", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power. Scales with usage." },
+  { label: "TDU Metering Charge", value: "$12.80", tip: "Monthly charge for maintaining your commercial-grade electric meter." },
+  { label: "Taxes & Fees", value: "$68.40", tip: "State and local taxes applied to your electricity usage." },
 ];
 
 const billSteps = [

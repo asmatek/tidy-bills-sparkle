@@ -260,7 +260,7 @@ const ResidentialPage = () => {
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Average Monthly Usage (kWh)</label>
-                <input type="text" placeholder="e.g. 1,200" className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors placeholder:text-muted-foreground/50" />
+                <input type="text" name="usage" placeholder="e.g. 1,200" className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors placeholder:text-muted-foreground/50" />
               </div>
               <div className="bg-gold/5 border border-gold/20 rounded-xl px-4 py-3 flex items-start gap-3">
                 <span className="text-gold text-lg">📄</span>

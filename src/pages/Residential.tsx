@@ -252,7 +252,7 @@ const ResidentialPage = () => {
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Email</label>
-                <input type="email" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                <input type="email" name="email" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Service Address (City, TX)</label>

@@ -234,9 +234,9 @@ const ResidentialPage = () => {
           />
           <div className="glass-card-gold rounded-2xl p-6 md:p-8 mt-10">
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Thank you! We'll be in touch within one business day.");
+              action="https://formspree.io/f/meeroqyy"
+              method="POST"
+              onSubmit={() => {
               }}
               className="space-y-4"
             >

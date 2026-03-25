@@ -243,7 +243,7 @@ const ResidentialPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Full Name</label>
-                  <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                  <input type="text" name="name" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Phone</label>

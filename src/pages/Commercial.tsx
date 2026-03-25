@@ -17,22 +17,24 @@ const whyItems = [
 ];
 
 const billLines = [
-  { label: "Energy Charge (1,200 kWh × 8.5¢)", value: "$102.00", tip: "The rate you pay per kWh — this is what Nova negotiates down." },
-  { label: "TDU Delivery Charge", value: "$42.50", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power." },
-  { label: "TDU Metering Charge", value: "$3.42", tip: "Monthly charge for maintaining your electric meter." },
-  { label: "Taxes & Fees", value: "$8.12", tip: "State and local taxes applied to your electricity usage." },
+  { label: "Energy Charge (15,000 kWh × 7.2¢)", value: "$1,080.00", tip: "The rate you pay per kWh — this is what Nova negotiates down. At commercial volumes, even a fraction of a cent saves hundreds." },
+  { label: "Demand Charge (85 kW × $4.50)", value: "$382.50", tip: "Based on your peak electricity demand during the billing period. Common for commercial accounts." },
+  { label: "TDU Delivery Charge", value: "$245.00", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power. Scales with usage." },
+  { label: "TDU Metering Charge", value: "$12.80", tip: "Monthly charge for maintaining your commercial-grade electric meter." },
+  { label: "Taxes & Fees", value: "$68.40", tip: "State and local taxes applied to your electricity usage." },
 ];
 
 const billSteps = [
-  { title: "Energy Charge", desc: "This is the only line item Nova can change — and it's usually the largest. We negotiate this rate directly." },
-  { title: "TDU (Delivery) Charges", desc: "Set by your local utility and the same regardless of provider. Nova can't change these, but we make sure they're correct." },
-  { title: "The Nova Difference", desc: "Most businesses overpay 15–30% on their energy charge alone. We find the gap and close it." },
+  { title: "Energy Charge", desc: "This is the biggest line on your bill — and the one Nova negotiates. At 15,000+ kWh/month, even a half-cent reduction saves $75/month." },
+  { title: "Demand Charge", desc: "Unique to commercial accounts, this is based on your peak load. The right plan structure can significantly reduce this cost." },
+  { title: "TDU (Delivery) Charges", desc: "Set by your local utility and the same regardless of provider. Nova can't change these, but we audit them for errors." },
+  { title: "The Nova Difference", desc: "Commercial accounts using 10,000–100,000+ kWh/month routinely overpay 15–30%. We've saved businesses thousands per year." },
 ];
 
 const faqItems = [
   { question: "Will switching providers affect my service or cause an outage?", answer: "No. Texas has a deregulated energy market. The physical delivery of power is always handled by your local TDU (like Oncor or CenterPoint). Switching providers only changes who bills you — there is zero interruption." },
   { question: "How does Nova Energy make money if it's free for me?", answer: "Electricity providers pay us a referral fee when you sign up through us — similar to how insurance brokers work. This fee is built into every plan regardless of how you sign up, so using us doesn't cost you anything extra." },
-  { question: "What if I'm locked into a contract?", answer: "We check your contract end date and set a reminder to find you a better plan when you're eligible. We can also lock in your renewal rate before your current contract expires." },
+  { question: "What if I'm locked into a contract?", answer: "We check your contract end date and set a reminder to shop your renewal well in advance. In many cases, we can lock in your next rate months before your current contract expires — protecting you from market spikes and ensuring a seamless transition with no gap in coverage." },
 ];
 
 const CommercialPage = () => {
@@ -158,7 +160,7 @@ const CommercialPage = () => {
             <GlassCard hover={false}>
               <div className="bg-electric/10 rounded-xl px-4 py-3 mb-5 flex justify-between items-center">
                 <span className="font-heading font-bold text-foreground">Sample Commercial Bill</span>
-                <span className="font-heading font-bold text-xl text-gold">$156.04</span>
+                <span className="font-heading font-bold text-xl text-gold">$1,788.70</span>
               </div>
               {billLines.map((line, i) => (
                 <div key={i} className="flex justify-between items-center py-3 border-b border-border last:border-b-0 text-sm group relative">
@@ -174,8 +176,8 @@ const CommercialPage = () => {
               <div className="bg-gold/5 border border-gold/20 rounded-xl px-4 py-3 mt-5 flex items-center gap-3">
                 <span className="text-2xl">💡</span>
                 <p className="text-xs text-muted-foreground">
-                  Most businesses overpay <strong className="text-gold">15–30%</strong> on the energy charge alone.
-                </p>
+                   At this usage level, a <strong className="text-gold">15–30% reduction</strong> on the energy charge saves <strong className="text-gold">$160–$325/month</strong>.
+                 </p>
               </div>
             </GlassCard>
 

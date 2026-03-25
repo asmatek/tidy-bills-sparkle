@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, ArrowRight, Lock, DollarSign, FileText, Zap } from "lucide-react";
+import { Home, ArrowRight, Lock, DollarSign, FileText, Zap, HelpCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
@@ -18,6 +18,19 @@ const steps = [
   { num: "01", title: "Share Your Bill", desc: "Send us a recent electricity bill or tell us your address and average usage." },
   { num: "02", title: "We Shop 50+ Plans", desc: "We compare rates across dozens of providers to find the best fit for your home." },
   { num: "03", title: "You Save Money", desc: "We handle the switch — no interruption, no hassle. Just a lower bill next month." },
+];
+
+const resBillLines = [
+  { label: "Energy Charge (1,200 kWh × 8.5¢)", value: "$102.00", tip: "The rate you pay per kWh — this is what Nova negotiates down." },
+  { label: "TDU Delivery Charge", value: "$42.50", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power." },
+  { label: "TDU Metering Charge", value: "$3.42", tip: "Monthly charge for maintaining your electric meter." },
+  { label: "Taxes & Fees", value: "$8.12", tip: "State and local taxes applied to your electricity usage." },
+];
+
+const resBillSteps = [
+  { title: "Energy Charge", desc: "This is the largest part of your bill — and the only line Nova can change. We negotiate this rate directly with providers." },
+  { title: "TDU (Delivery) Charges", desc: "Set by your local utility (Oncor, CenterPoint, etc.) and the same regardless of provider. We can't change these, but we verify they're correct." },
+  { title: "The Nova Difference", desc: "Most homeowners overpay 15–30% on the energy charge without realizing it. We find you the lowest available rate — free." },
 ];
 
 const faqItems = [
@@ -130,6 +143,66 @@ const ResidentialPage = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Understand Your Bill */}
+      <section id="bill" className="section-padding border-t border-border">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader
+            label="Understand Your Bill"
+            labelColor="gold"
+            title="Know What You're Paying For"
+            subtitle="Most homeowners don't realize how much of their bill is negotiable. Here's a simple breakdown."
+          />
+          <div className="grid md:grid-cols-2 gap-10 mt-12 items-start">
+            {/* Bill Visual */}
+            <GlassCard hover={false} variant="gold">
+              <div className="bg-gold/10 rounded-xl px-4 py-3 mb-5 flex justify-between items-center">
+                <span className="font-heading font-bold text-foreground">Sample Home Bill</span>
+                <span className="font-heading font-bold text-xl text-gold">$156.04</span>
+              </div>
+              {resBillLines.map((line, i) => (
+                <div key={i} className="flex justify-between items-center py-3 border-b border-border last:border-b-0 text-sm group relative">
+                  <span className="text-muted-foreground flex items-center gap-1">
+                    {line.label}
+                    <span className="inline-flex w-4 h-4 rounded-full bg-gold text-secondary-foreground text-[9px] font-bold items-center justify-center cursor-help" title={line.tip}>
+                      ?
+                    </span>
+                  </span>
+                  <span className="text-foreground font-medium">{line.value}</span>
+                </div>
+              ))}
+              <div className="bg-gold/5 border border-gold/20 rounded-xl px-4 py-3 mt-5 flex items-center gap-3">
+                <span className="text-2xl">💡</span>
+                <p className="text-xs text-muted-foreground">
+                  Most homeowners overpay <strong className="text-gold">15–30%</strong> on the energy charge alone.
+                </p>
+              </div>
+            </GlassCard>
+
+            {/* Bill Steps */}
+            <div className="space-y-6">
+              {resBillSteps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="flex gap-4 items-start"
+                >
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold to-warm text-secondary-foreground font-bold text-sm flex items-center justify-center flex-shrink-0 font-heading">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <h4 className="font-heading font-bold mb-1 text-foreground">{step.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -22,15 +22,20 @@ const steps = [
 
 const resBillLines = [
   { label: "Energy Charge (1,200 kWh × 8.5¢)", value: "$102.00", tip: "The rate you pay per kWh — this is what Nova negotiates down." },
-  { label: "TDU Delivery Charge", value: "$42.50", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power." },
-  { label: "TDU Metering Charge", value: "$3.42", tip: "Monthly charge for maintaining your electric meter." },
+  { label: "Base / Monthly Charge", value: "$9.95", tip: "A flat fee many providers charge just for having an account, regardless of usage." },
+  { label: "TDU Delivery Charge", value: "$42.50", tip: "Paid to your local utility (Oncor, CenterPoint, etc.) for delivering power to your home." },
+  { label: "TDU Metering Charge", value: "$3.42", tip: "Monthly charge for reading and maintaining your electric meter." },
+  { label: "Transmission Charge", value: "$4.18", tip: "Covers the cost of moving electricity from power plants to your local utility's grid." },
+  { label: "System Benefit Fund", value: "$1.54", tip: "A state-mandated fee that funds assistance programs for low-income households." },
   { label: "Taxes & Fees", value: "$8.12", tip: "State and local taxes applied to your electricity usage." },
 ];
 
 const resBillSteps = [
   { title: "Energy Charge", desc: "This is the largest part of your bill — and the only line Nova can change. We negotiate this rate directly with providers." },
-  { title: "TDU (Delivery) Charges", desc: "Set by your local utility (Oncor, CenterPoint, etc.) and the same regardless of provider. We can't change these, but we verify they're correct." },
-  { title: "The Nova Difference", desc: "Most homeowners overpay 15–30% on the energy charge without realizing it. We find you the lowest available rate — free." },
+  { title: "Monthly / Base Charge", desc: "Many providers add a flat monthly fee ($5–$15) just for having an account. Some plans advertise low rates but hide costs here — we flag those." },
+  { title: "TDU & Delivery Charges", desc: "Set by your local utility (Oncor, CenterPoint, etc.) and the same regardless of provider. Includes delivery, metering, and transmission fees." },
+  { title: "Other Fees", desc: "Items like the System Benefit Fund and miscellaneous surcharges are state-regulated. They're small but add up — we make sure nothing unexpected appears." },
+  { title: "The Nova Difference", desc: "Most homeowners overpay 15–30% on the energy charge without realizing it. We find you the lowest total rate — including hidden monthly fees — for free." },
 ];
 
 const faqItems = [

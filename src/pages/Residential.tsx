@@ -256,7 +256,7 @@ const ResidentialPage = () => {
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Service Address (City, TX)</label>
-                <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
+                <input type="text" name="address" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-gold/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Average Monthly Usage (kWh)</label>

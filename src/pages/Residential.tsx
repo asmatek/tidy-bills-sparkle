@@ -251,11 +251,15 @@ const ResidentialPage = () => {
             centered
           />
           <div className="glass-card-gold rounded-2xl p-6 md:p-8 mt-10">
+            {submitted ? (
+              <div className="text-center py-12">
+                <span className="text-4xl mb-4 block">✅</span>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-2">We received your request!</h3>
+                <p className="text-muted-foreground text-sm">We'll get back to you within one business day with your best rate.</p>
+              </div>
+            ) : (
             <form
-              action="https://formspree.io/f/meeroqyy"
-              method="POST"
-              onSubmit={() => {
-              }}
+              onSubmit={handleSubmit}
               className="space-y-4"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -248,10 +248,8 @@ const CommercialPage = () => {
             <div className="md:col-span-3">
               <div className="glass-card-electric rounded-2xl p-6 md:p-8">
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Thank you! We'll send your custom rate within one business day.");
-                  }}
+                  action="https://formspree.io/f/meeroqyy"
+                  method="POST"
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

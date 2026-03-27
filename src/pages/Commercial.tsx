@@ -317,7 +317,8 @@ const CommercialPage = () => {
 
                   <div>
                     <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Notes (Optional)</label>
-                    <textarea rows={3} className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors resize-vertical" />
+                    <textarea name="notes" rows={3} className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors resize-vertical" />
+                    <input type="hidden" name="_subject" value="New Commercial Quote Request" />
                   </div>
 
                   <button

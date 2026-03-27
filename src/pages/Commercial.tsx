@@ -40,6 +40,23 @@ const faqItems = [
 const CommercialPage = () => {
   const [files, setFiles] = useState<string[]>([]);
   const [dragOver, setDragOver] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    await fetch("https://formspree.io/f/meeroqyy", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+    setSubmitting(false);
+    setSubmitted(true);
+    form.reset();
+    setFiles([]);
+  };
 
   const handleFiles = (fileList: FileList | null) => {
     if (!fileList) return;
@@ -247,9 +264,15 @@ const CommercialPage = () => {
             {/* Form */}
             <div className="md:col-span-3">
               <div className="glass-card-electric rounded-2xl p-6 md:p-8">
+                {submitted ? (
+                  <div className="text-center py-12">
+                    <span className="text-4xl mb-4 block">✅</span>
+                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">We received your request!</h3>
+                    <p className="text-muted-foreground text-sm">We'll get back to you within one business day with your custom rate analysis.</p>
+                  </div>
+                ) : (
                 <form
-                  action="https://formspree.io/f/meeroqyy"
-                  method="POST"
+                  onSubmit={handleSubmit}
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -323,14 +346,16 @@ const CommercialPage = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-full bg-gradient-to-r from-electric to-electric/80 text-primary-foreground font-heading font-bold text-sm tracking-wide hover:-translate-y-0.5 transition-all shadow-lg shadow-electric/25"
+                    disabled={submitting}
+                    className="w-full py-3.5 rounded-full bg-gradient-to-r from-electric to-electric/80 text-primary-foreground font-heading font-bold text-sm tracking-wide hover:-translate-y-0.5 transition-all shadow-lg shadow-electric/25 disabled:opacity-60"
                   >
-                    Submit & Get Your Rate →
+                    {submitting ? "Sending..." : "Submit & Get Your Rate →"}
                   </button>
                   <p className="text-center text-xs text-muted-foreground">
                     Free analysis. No obligation. Your data stays private.
                   </p>
                 </form>
+                )}
               </div>
             </div>
           </div>

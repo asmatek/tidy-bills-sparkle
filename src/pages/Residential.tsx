@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Home, ArrowRight, Lock, DollarSign, FileText, Zap, HelpCircle } from "lucide-react";
@@ -46,6 +47,23 @@ const faqItems = [
 ];
 
 const ResidentialPage = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    await fetch("https://formspree.io/f/meeroqyy", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+    setSubmitting(false);
+    setSubmitted(true);
+    form.reset();
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -233,11 +251,15 @@ const ResidentialPage = () => {
             centered
           />
           <div className="glass-card-gold rounded-2xl p-6 md:p-8 mt-10">
+            {submitted ? (
+              <div className="text-center py-12">
+                <span className="text-4xl mb-4 block">✅</span>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-2">We received your request!</h3>
+                <p className="text-muted-foreground text-sm">We'll get back to you within one business day with your best rate.</p>
+              </div>
+            ) : (
             <form
-              action="https://formspree.io/f/meeroqyy"
-              method="POST"
-              onSubmit={() => {
-              }}
+              onSubmit={handleSubmit}
               className="space-y-4"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -272,14 +294,16 @@ const ResidentialPage = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold to-warm text-secondary-foreground font-heading font-bold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-gold/25"
+                disabled={submitting}
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold to-warm text-secondary-foreground font-heading font-bold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-gold/25 disabled:opacity-60"
               >
-                Get My Free Quote →
+                {submitting ? "Sending..." : "Get My Free Quote →"}
               </button>
               <p className="text-center text-xs text-muted-foreground">
                 No spam. No obligation. Just savings.
               </p>
             </form>
+            )}
           </div>
         </div>
       </section>

@@ -264,9 +264,15 @@ const CommercialPage = () => {
             {/* Form */}
             <div className="md:col-span-3">
               <div className="glass-card-electric rounded-2xl p-6 md:p-8">
+                {submitted ? (
+                  <div className="text-center py-12">
+                    <span className="text-4xl mb-4 block">✅</span>
+                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">We received your request!</h3>
+                    <p className="text-muted-foreground text-sm">We'll get back to you within one business day with your custom rate analysis.</p>
+                  </div>
+                ) : (
                 <form
-                  action="https://formspree.io/f/meeroqyy"
-                  method="POST"
+                  onSubmit={handleSubmit}
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

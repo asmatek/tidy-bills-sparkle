@@ -346,14 +346,16 @@ const CommercialPage = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-full bg-gradient-to-r from-electric to-electric/80 text-primary-foreground font-heading font-bold text-sm tracking-wide hover:-translate-y-0.5 transition-all shadow-lg shadow-electric/25"
+                    disabled={submitting}
+                    className="w-full py-3.5 rounded-full bg-gradient-to-r from-electric to-electric/80 text-primary-foreground font-heading font-bold text-sm tracking-wide hover:-translate-y-0.5 transition-all shadow-lg shadow-electric/25 disabled:opacity-60"
                   >
-                    Submit & Get Your Rate →
+                    {submitting ? "Sending..." : "Submit & Get Your Rate →"}
                   </button>
                   <p className="text-center text-xs text-muted-foreground">
                     Free analysis. No obligation. Your data stays private.
                   </p>
                 </form>
+                )}
               </div>
             </div>
           </div>

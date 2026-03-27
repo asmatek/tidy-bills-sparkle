@@ -294,14 +294,16 @@ const ResidentialPage = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold to-warm text-secondary-foreground font-heading font-bold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-gold/25"
+                disabled={submitting}
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold to-warm text-secondary-foreground font-heading font-bold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-lg shadow-gold/25 disabled:opacity-60"
               >
-                Get My Free Quote →
+                {submitting ? "Sending..." : "Get My Free Quote →"}
               </button>
               <p className="text-center text-xs text-muted-foreground">
                 No spam. No obligation. Just savings.
               </p>
             </form>
+            )}
           </div>
         </div>
       </section>

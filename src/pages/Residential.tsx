@@ -46,6 +46,23 @@ const faqItems = [
 ];
 
 const ResidentialPage = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    await fetch("https://formspree.io/f/meeroqyy", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+    setSubmitting(false);
+    setSubmitted(true);
+    form.reset();
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

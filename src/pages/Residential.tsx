@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Home, ArrowRight, Lock, DollarSign, FileText, Zap, HelpCircle } from "lucide-react";

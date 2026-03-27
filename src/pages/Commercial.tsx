@@ -248,35 +248,33 @@ const CommercialPage = () => {
             <div className="md:col-span-3">
               <div className="glass-card-electric rounded-2xl p-6 md:p-8">
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Thank you! We'll send your custom rate within one business day.");
-                  }}
+                  action="https://formspree.io/f/meeroqyy"
+                  method="POST"
                   className="space-y-4"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Full Name</label>
-                      <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
+                      <input type="text" name="name" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
                     </div>
                     <div>
                       <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Business Name</label>
-                      <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
+                      <input type="text" name="business" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Email</label>
-                      <input type="email" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
+                      <input type="email" name="email" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
                     </div>
                     <div>
                       <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Phone</label>
-                      <input type="tel" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
+                      <input type="tel" name="phone" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Service Address</label>
-                    <input type="text" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
+                    <input type="text" name="address" required className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors" />
                   </div>
 
                   {/* Upload zone */}
@@ -319,7 +317,8 @@ const CommercialPage = () => {
 
                   <div>
                     <label className="block text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Notes (Optional)</label>
-                    <textarea rows={3} className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors resize-vertical" />
+                    <textarea name="notes" rows={3} className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm outline-none focus:border-electric/50 transition-colors resize-vertical" />
+                    <input type="hidden" name="_subject" value="New Commercial Quote Request" />
                   </div>
 
                   <button

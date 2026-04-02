@@ -15,7 +15,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[5vw] py-3 bg-background/85 backdrop-blur-xl border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[5vw] py-3 bg-[hsl(220,30%,18%)]/95 backdrop-blur-xl border-b border-border">
       <Link to="/" className="flex items-center">
         <img src={logo} alt="Nova Energy" className="h-12 w-auto" />
       </Link>

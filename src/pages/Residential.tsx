@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
 import GlassCard from "@/components/GlassCard";
 import FAQSection from "@/components/FAQSection";
+import { supabase } from "@/integrations/supabase/client";
 
 const promises = [
   { icon: <Lock className="w-6 h-6" />, title: "Fixed Rate, Period", desc: "Your rate per kWh is locked in regardless of how much you use. High AC month? Same rate." },
@@ -54,6 +55,15 @@ const ResidentialPage = () => {
     e.preventDefault();
     setSubmitting(true);
     const form = e.currentTarget;
+    const data = new FormData(form);
+    await supabase.from("quote_requests").insert({
+      type: "residential",
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      phone: String(data.get("phone") || ""),
+      address: String(data.get("address") || ""),
+      usage: String(data.get("usage") || ""),
+    });
     await fetch("https://formspree.io/f/meeroqyy", {
       method: "POST",
       body: new FormData(form),

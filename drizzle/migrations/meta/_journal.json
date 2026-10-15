@@ -15,6 +15,13 @@
       "when": 1792096260053,
       "tag": "0001_tighten_quote_requests_grants",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792096338716,
+      "tag": "0002_admin_leads",
+      "breakpoints": true
     }
   ]
 }

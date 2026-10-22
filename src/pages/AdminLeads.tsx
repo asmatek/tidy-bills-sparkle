@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { toast } from "sonner";
-import { Download, LogOut, Search } from "lucide-react";
+import { Download, LogOut, Search, Trash2 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 type Lead = Tables<"quote_requests">;
@@ -121,6 +121,20 @@ const AdminLeads = () => {
     });
     setSaving(false);
     if (ok) toast.success("Saved");
+  };
+
+  const deleteLead = async () => {
+    if (!selected) return;
+    if (!window.confirm(`Delete the lead from ${selected.name}? This can't be undone.`)) return;
+    const id = selected.id;
+    const { error } = await supabase.from("quote_requests").delete().eq("id", id);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    setLeads((ls) => ls.filter((l) => l.id !== id));
+    setSelected(null);
+    toast.success("Lead deleted");
   };
 
   const exportCsv = () => {
@@ -301,6 +315,9 @@ const AdminLeads = () => {
                     <Textarea id="inotes" rows={5} value={draft.internal_notes} onChange={(e) => setDraft({ ...draft, internal_notes: e.target.value })} />
                   </div>
                   <Button onClick={saveDetails} disabled={saving} className="w-full">{saving ? "Saving…" : "Save changes"}</Button>
+                  <Button variant="destructive" onClick={deleteLead} className="w-full">
+                    <Trash2 className="h-4 w-4 mr-2" /> Delete lead
+                  </Button>
                 </div>
               </div>
             </>

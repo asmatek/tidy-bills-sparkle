@@ -250,7 +250,7 @@ const AdminLeads = () => {
             </TableHeader>
             <TableBody>
               {filtered.length === 0 && (
-                <TableRow><TableCell colSpan={9} className="text-center text-muted-foreground py-10">No leads found.</TableCell></TableRow>
+                <TableRow><TableCell colSpan={10} className="text-center text-muted-foreground py-10">No leads found.</TableCell></TableRow>
               )}
               {filtered.map((l) => (
                 <TableRow key={l.id} onClick={() => openLead(l)} className="cursor-pointer">
@@ -322,7 +322,7 @@ const AdminLeads = () => {
                     <Textarea id="inotes" rows={5} value={draft.internal_notes} onChange={(e) => setDraft({ ...draft, internal_notes: e.target.value })} />
                   </div>
                   <Button onClick={saveDetails} disabled={saving} className="w-full">{saving ? "Saving…" : "Save changes"}</Button>
-                  <Button variant="destructive" onClick={deleteLead} className="w-full">
+                  <Button variant="destructive" onClick={() => deleteLead()} className="w-full">
                     <Trash2 className="h-4 w-4 mr-2" /> Delete lead
                   </Button>
                 </div>

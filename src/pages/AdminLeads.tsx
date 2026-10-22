@@ -123,10 +123,11 @@ const AdminLeads = () => {
     if (ok) toast.success("Saved");
   };
 
-  const deleteLead = async () => {
-    if (!selected) return;
-    if (!window.confirm(`Delete the lead from ${selected.name}? This can't be undone.`)) return;
-    const id = selected.id;
+  const deleteLead = async (target?: Lead) => {
+    const lead = target ?? selected;
+    if (!lead) return;
+    if (!window.confirm(`Delete the lead from ${lead.name}? This can't be undone.`)) return;
+    const id = lead.id;
     const { error } = await supabase.from("quote_requests").delete().eq("id", id);
     if (error) {
       toast.error(error.message);
@@ -244,6 +245,7 @@ const AdminLeads = () => {
                 <TableHead>Address</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Contract End</TableHead>
+                <TableHead className="w-10"></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -269,6 +271,11 @@ const AdminLeads = () => {
                   <TableCell className="max-w-[220px] truncate">{l.address}</TableCell>
                   <TableCell><StatusSelect lead={l} /></TableCell>
                   <TableCell className="whitespace-nowrap">{fmtDate(l.contract_end_date)}</TableCell>
+                  <TableCell onClick={(e) => e.stopPropagation()}>
+                    <Button variant="ghost" size="icon" aria-label="Delete lead" onClick={() => deleteLead(l)} className="text-destructive hover:text-destructive">
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
